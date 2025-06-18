@@ -64,12 +64,19 @@ document.addEventListener("keydown", e => {
 });
 
 function keyDownHandler(e) {
-  if (e.key === "ArrowRight" || e.key === "Right") rightPressed = true;
-  else if (e.key === "ArrowLeft" || e.key === "Left") leftPressed = true;
+  if (["ArrowRight", "Right", "d", "D"].includes(e.key)) {
+    rightPressed = true;
+  } else if (["ArrowLeft", "Left", "a", "A"].includes(e.key)) {
+    leftPressed = true;
+  }
 }
+
 function keyUpHandler(e) {
-  if (e.key === "ArrowRight" || e.key === "Right") rightPressed = false;
-  else if (e.key === "ArrowLeft" || e.key === "Left") leftPressed = false;
+  if (["ArrowRight", "Right", "d", "D"].includes(e.key)) {
+    rightPressed = false;
+  } else if (["ArrowLeft", "Left", "a", "A"].includes(e.key)) {
+    leftPressed = false;
+  }
 }
 
 // Función alerta cuando termina juego
