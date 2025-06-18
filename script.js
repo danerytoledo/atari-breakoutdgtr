@@ -28,13 +28,13 @@ let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
-// Nuevos colores para ladrillos, fila por fila
+// Nuevos colores 
 const brickColors = [
   ['#FF69B4', '#FFC0CB'], // rosa fuerte y rosa claro
   ['#87CEFA', '#ADD8E6'], // celeste claro y azul suave
   ['#9370DB', '#B19CD9'], // morado medio y morado claro
   ['#F8F8FF', '#E8E8E8'], // blanco fantasma y gris muy claro
-  ['#A9A9A9', '#808080'], // gris oscuro y gris medio
+  ['#20B2AA', '#40E0D0'], // azul verdoso y turquesa claro
 ];
 
 const bricks = [];
@@ -209,7 +209,7 @@ function collisionDetection() {
           if (score === brickRowCount * brickColumnCount) {
             gameWon = true;
             gameOver = true;
-            showAlert("🎉 ¡Ganaste!");
+            showAlert("🎉 ¡Ganastee!");
           }
         }
       }
