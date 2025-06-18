@@ -81,7 +81,7 @@ function keyUpHandler(e) {
 
 // Función alerta cuando termina juego
 function showAlert(message) {
-  alert(message + "\nPresiona ENTER para reiniciar");
+  alert(message + "\nPresiona ENTER para reiniciar el juego");
 }
 
 // Reinicia juego
