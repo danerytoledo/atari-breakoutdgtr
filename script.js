@@ -233,7 +233,7 @@ function collisionDetection() {
 
             // Efecto visual al ganar
             document.body.style.animation = "flashWin 0.5s ease 3";
-            showAlert("🎉 ¡Ganastee!");
+            showAlert(`🎉 ¡Ganaste!\nPuntaje final: ${score}`);
           }
         }
       }
