@@ -219,7 +219,8 @@ function collisionDetection() {
 
           // Incrementa la velocidad poco a poco hasta maxSpeed
           let currentSpeed = Math.sqrt(dx*dx + dy*dy);
-          let newSpeed = Math.min(currentSpeed + 0.15, maxSpeed);
+          let acceleration = (score % 2 === 0) ? 0.2 : 0.1;
+          let newSpeed = Math.min(currentSpeed + acceleration, maxSpeed);
 
           // Mantiene la dirección
           let angle = Math.atan2(dy, dx);
