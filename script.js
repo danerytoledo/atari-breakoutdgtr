@@ -86,6 +86,17 @@ function showAlert(message) {
 
 // Reinicia juego
 function initGame() {
+  console.clear();
+  console.log("🔄 Juego reiniciado");
+
+  // Efecto visual rápido en el canvas al reiniciar
+  const canvasEl = document.getElementById("gameCanvas");
+  canvasEl.style.transition = "transform 0.2s ease";
+  canvasEl.style.transform = "scale(0.97)";
+  setTimeout(() => {
+    canvasEl.style.transform = "scale(1)";
+  }, 100);
+
   x = canvas.width / 2;
   y = canvas.height - 60;
   speedMultiplier = 1;
@@ -95,12 +106,14 @@ function initGame() {
   score = 0;
   gameOver = false;
   gameWon = false;
+
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       bricks[c][r].status = 1;
       bricks[c][r].popAnimation = 0;
     }
   }
+
   draw();
 }
 
