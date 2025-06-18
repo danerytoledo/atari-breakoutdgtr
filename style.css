@@ -11,7 +11,7 @@ body {
   animation: pulse 6s ease-in-out infinite;
 }
 
-/* Animación de pulso para el fondo */
+/* Animación de pulso para el fondo del juego */
 @keyframes pulse {
   0%, 100% {
     background-color: #121212;
@@ -21,14 +21,20 @@ body {
   }
 }
 
-/* Animación visual cuando ganas */
+/* Efecto visual al ganar */
 @keyframes flashWin {
   0% { background-color: #121212; }
   50% { background-color: #333333; }
   100% { background-color: #121212; }
 }
 
-/* Estilo del canvas */
+/* Efecto visual al perder */
+@keyframes flashLose {
+  0%, 100% { background-color: #121212; }
+  50% { background-color: #2a0000; }
+}
+
+/* Estilo del canvas (área del juego) */
 canvas {
   background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
   border-radius: 12px;
@@ -40,7 +46,7 @@ canvas {
   transition: transform 0.3s ease;
 }
 
-/* Efecto hover: agrandar un poco el canvas al pasar el mouse */
+/* Efecto al pasar el mouse sobre el canvas */
 canvas:hover {
   transform: scale(1.02);
 }

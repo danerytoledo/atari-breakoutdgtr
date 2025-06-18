@@ -272,8 +272,12 @@ function update() {
     }
   }
 
-  if (rightPressed && paddleX < canvas.width - paddleWidth) paddleX += 10;
-  if (leftPressed && paddleX > 0) paddleX -= 10;
+  if (rightPressed && paddleX < canvas.width - paddleWidth) {
+    paddleX += 10;
+  }
+  if (leftPressed && paddleX > 0) {
+    paddleX -= 10;
+  }
 }
 
 function draw() {
@@ -284,15 +288,14 @@ function draw() {
   drawPaddle();
   drawScore();
 
-  if (gameOver) return;
-
-  collisionDetection();
-  update();
-
-  requestAnimationFrame(draw);
+  if (!gameOver) {
+    collisionDetection();
+    update();
+    requestAnimationFrame(draw);
+  }
 }
 
-// Polyfill para rectángulo redondeado
+// Polyfill para roundRect (compatibilidad con navegadores que no lo soportan)
 if (!CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
     if (w < 2 * r) r = w / 2;
@@ -306,6 +309,10 @@ if (!CanvasRenderingContext2D.prototype.roundRect) {
     this.closePath();
     return this;
   };
+} else {
+  console.log("✔️ roundRect ya está soportado por el navegador");
 }
 
+// Inicia el juego por primera vez
 initGame();
+console.log("🚀 Juego cargado y listo");
