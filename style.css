@@ -1,3 +1,4 @@
+/* Estilo general del cuerpo */
 body {
   margin: 0;
   background: radial-gradient(circle at center, #1a1a1a 0%, #121212 100%);
@@ -10,6 +11,7 @@ body {
   animation: pulse 6s ease-in-out infinite;
 }
 
+/* Animación de pulso para el fondo */
 @keyframes pulse {
   0%, 100% {
     background-color: #121212;
@@ -19,6 +21,14 @@ body {
   }
 }
 
+/* Animación visual cuando ganas */
+@keyframes flashWin {
+  0% { background-color: #121212; }
+  50% { background-color: #333333; }
+  100% { background-color: #121212; }
+}
+
+/* Estilo del canvas */
 canvas {
   background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
   border-radius: 12px;
@@ -30,6 +40,7 @@ canvas {
   transition: transform 0.3s ease;
 }
 
+/* Efecto hover: agrandar un poco el canvas al pasar el mouse */
 canvas:hover {
   transform: scale(1.02);
 }

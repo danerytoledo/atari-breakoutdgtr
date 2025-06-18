@@ -250,18 +250,24 @@ function update() {
   x += dx;
   y += dy;
 
-  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) dx = -dx;
-  if (y + dy < ballRadius) dy = -dy;
+  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+    dx = -dx;
+  }
+  if (y + dy < ballRadius) {
+    dy = -dy;
+  }
   else if (y + dy > canvas.height - ballRadius - paddleHeight) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       let collidePoint = x - (paddleX + paddleWidth / 2);
       let normalizedPoint = collidePoint / (paddleWidth / 2);
       let angle = normalizedPoint * (Math.PI / 3);
-      let speed = Math.sqrt(dx*dx + dy*dy);
+      let speed = Math.sqrt(dx * dx + dy * dy);
       dx = speed * Math.sin(angle);
       dy = -speed * Math.cos(angle);
     } else {
       gameOver = true;
+      // Efecto visual al perder
+      document.body.style.animation = "flashLose 0.3s ease 3";
       showAlert("💥 ¡Perdiste!");
     }
   }
