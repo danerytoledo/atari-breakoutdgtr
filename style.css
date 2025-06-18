@@ -1,20 +1,35 @@
 body {
   margin: 0;
-  background-color: #121212;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #121212 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   user-select: none;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: #121212;
+  }
+  50% {
+    background-color: #1e1e1e;
+  }
 }
 
 canvas {
   background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow:
     0 0 20px #00f7ff,
     inset 0 0 15px #00f7ff;
   display: block;
   margin: auto;
+  transition: transform 0.3s ease;
+}
+
+canvas:hover {
+  transform: scale(1.02);
 }
