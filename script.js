@@ -34,7 +34,7 @@ const brickColors = [
   ['#87CEFA', '#ADD8E6'], // celeste claro y azul suave
   ['#9370DB', '#B19CD9'], // morado medio y morado claro
   ['#F8F8FF', '#E8E8E8'], // blanco fantasma y gris muy claro
-  ['#20B2AA', '#40E0D0'], // azul verdoso y turquesa claro
+  ['#FFA07A', '#FF6347'], // salmón claro y tomate
 ];
 
 const bricks = [];
@@ -230,6 +230,9 @@ function collisionDetection() {
           if (score === brickRowCount * brickColumnCount) {
             gameWon = true;
             gameOver = true;
+
+            // Efecto visual al ganar
+            document.body.style.animation = "flashWin 0.5s ease 3";
             showAlert("🎉 ¡Ganastee!");
           }
         }
