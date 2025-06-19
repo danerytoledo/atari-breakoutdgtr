@@ -34,7 +34,7 @@ const brickColors = [
   ['#87CEFA', '#ADD8E6'], // celeste claro y azul suave
   ['#9370DB', '#B19CD9'], // morado medio y morado claro
   ['#F8F8FF', '#E8E8E8'], // blanco fantasma y gris muy claro
-  ['#FFA07A', '#FF6347'], // salmón claro y tomate
+  ['#FFF176', '#FFEB3B'] // amarillo patito y amarillo claro
 ];
 
 const bricks = [];
